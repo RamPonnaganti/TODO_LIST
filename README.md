@@ -7,11 +7,11 @@ TechStack Used:
 1.Framework: Django = 3.2.14
 2.Language: Python = 3.10.1
 
-Commands To Run Project:
+# Commands To Run Project:
 
 1.create a python virtual environment
 2.pip install the requirements file given
-2.run command: python manage.py runserver
+3.run command: python manage.py runserver
 
 Some of the main features of this project are as follows:
 
@@ -33,6 +33,7 @@ use Login to access Features
 2.See the Todo Status
 3.See Todo's which are incomplete based on Prority
 
-<img width="1277" alt="dashboard" src="https://user-images.githubusercontent.com/125657703/219638150-9f631a1f-4774-4b1b-a243-8732ef9f3ddc.png">
+
+<img width="1277" alt="dashboard" src="https://user-images.githubusercontent.com/125657703/219639145-ec300fed-47bd-49ac-9eda-126f2e9887b5.png">
 
 
