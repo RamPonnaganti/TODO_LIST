@@ -34,6 +34,8 @@ use Login to access Features
 3.See Todo's which are incomplete based on Prority
 
 
-<img width="1277" alt="dashboard" src="https://user-images.githubusercontent.com/125657703/219639145-ec300fed-47bd-49ac-9eda-126f2e9887b5.png">
+![Screenshot_20230220_151253](https://user-images.githubusercontent.com/125657703/220070371-dc67a800-4edf-4a5c-be4e-8a9497d453cc.png)
+
+
 
 
