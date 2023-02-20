@@ -1,0 +1,25 @@
+[
+    {
+        "id" : 1,
+        "model" : "app.TODO",
+        "fields":{
+            "user_id" : 7,
+            "title" : "dinner",
+            "status":"C",
+            "date" : "2023-02-20",
+            "priority" : "2"
+        }
+    },
+
+    {
+        "id" : 2,
+        "model" : "app.TODO",
+        "fields":{
+            "user_id" : 7,
+            "title" : "call",
+            "status":"P",
+            "date" : "2023-02-20",
+            "priority" : "1"
+        }
+    }
+]
