@@ -1,0 +1,73 @@
+[
+    {
+        "id" : 1,
+        "model" : "app1.TODO1",
+        "fields":{
+            "user_id" : 9,
+            "title" : "dinner",
+            "status":"C",
+            "date" : "2023-02-20",
+            "priority" : "2"
+        }
+    },
+
+    {
+        "id" : 2,
+        "model" : "app1.TODO1",
+        "fields":{
+            "user_id" : 9,
+            "title" : "call",
+            "status":"P",
+            "date" : "2023-02-20",
+            "priority" : "1"
+        }
+    },
+
+    {
+        "id" : 3,
+        "model" : "app1.TODO1",
+        "fields":{
+            "user_id" : 9,
+            "title" : "scrum",
+            "status":"P",
+            "date" : "2023-02-20",
+            "priority" : "1"
+        }
+    },
+
+    {
+        "id" : 4,
+        "model" : "app1.TODO1",
+        "fields":{
+            "user_id" : 9,
+            "title" : "project",
+            "status":"P",
+            "date" : "2023-02-20",
+            "priority" : "1"
+        }
+    },
+
+    {
+        "id" : 5,
+        "model" : "app1.TODO1",
+        "fields":{
+            "user_id" : 9,
+            "title" : "Team call",
+            "status":"P",
+            "date" : "2023-02-20",
+            "priority" : "2"
+        }
+    },
+
+    {
+        "id" : 6,
+        "model" : "app1.TODO1",
+        "fields":{
+            "user_id" : 9,
+            "title" : "office",
+            "status":"C",
+            "date" : "2023-02-20",
+            "priority" : "1"
+        }
+    }
+]
