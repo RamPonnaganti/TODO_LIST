@@ -1,0 +1,134 @@
+{% extends 'app/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>Hello {{request.user|title}}</h1>
+        <h3 style="margin:0">You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h3>
+    </div>
+
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a> {% else %}
+    <a href="{% url 'login' %}">Login</a> {% endif %}
+</div>
+
+
+<div id="search-add-wrapper">
+    <h1>My To-Do_List</h1>
+    {% if items|length > 0 %}
+    <a id="add-link" href="{% url 'create-task' %}">&#x2b;</a>
+    {% endif %}
+</div>
+
+<div id="tasklist" class="task-items-wrapper">
+    {% for item in items %}
+    <div class="task-wrapper" data-position="{{task.pk}}">
+        <div class="task-title">
+            {% if item.complete %}
+            <div class="task-complete-icon"></div>
+            <i><s><a href="{% url 'update-task' item.id %}">{{item.title}}</a></s></i> 
+            {% else %}
+            <div class="task-incomplete-icon"></div>
+            <a href="{% url 'update-task' item.id %}">{{item.title}}</a> 
+            {% endif %}
+        </div>
+        <div class="task-controls">
+            <a class="delete-link" href="{% url 'delete-task' item.id %}">&#215;</a>
+            <span class="handle">&nbsp;&#10247;</span>
+        </div>
+    </div>
+
+    {% empty %}
+    <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
+        <h3>No new tasks are created.</h3>
+        <h3>Create a <a style="text-decoration: none; color: #e53935;" href="{% url 'create-task' %}">New task</a> ! </h3>
+    </div>
+    {% endfor %}
+</div>
+<div class=''>
+    {% if is_paginated %}
+<ul class="pagination">
+{% if items.has_previous %}
+    <li>
+    <span><a href="?page={{ items.previous_page_number }}">Previous</a></span>
+    </li>
+{% endif %}
+<li class="">
+    <span>Page {{ items.number }} of {{ items.paginator.num_pages }}.</span>
+</li>
+{% if items.has_next %}
+    <li>
+    <span><a href="?page={{ items.next_page_number }}">Next</a></span>
+    </li>
+{% endif %}
+</ul>
+{% else %}
+<h3>Your File Exam</h3>
+<p>File not yet available</p>
+{% endif %}
+</div>
+
+{% endblock content %}
+
+
+<script>
+    var taskList = document.getElementById("tasklist");
+    var reorderForm = document.getElementById("reorderForm");
+    var positionInput = document.getElementById("positionInput");
+
+    let sortable = Sortable.create(taskList, {
+        handle: '.handle',
+        ghostClass: 'dropArea',
+        chosenClass: 'selectedTask',
+
+    });
+
+    function reordering() {
+        const rows = document.getElementsByClassName("task-wrapper");
+        let pos = [];
+        for (let row of rows) {
+            pos.push(row.dataset.position);
+        }
+        console.log(pos.join(","))
+        positionInput.value = pos.join(',');
+        reorderForm.submit();
+    }
+
+    document.ondrop = reordering
+</script>
+
+
+
+
+ {% comment %} <table>
+    <tr>
+        <th>
+            Items
+        </th>
+        <th>
+            Actions
+        </th>
+        
+    </tr>
+    
+    {% for item in items %}
+    <tr>
+         
+        <td>
+            {{item.title}}
+        </td>
+        <td>
+            <a href="{% url 'items' item.id %}">View</a>
+        </td>
+        <td>
+            <a href="{% url 'update-task' item.id %}">Update</a>
+        </td>
+        <td>
+            <a href="{% url 'delete-task' item.id %}">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+        <h3>no items found</h3>
+    {% endfor %}
+    
+ </table>
+ {% endblock content %} {% endcomment %}
